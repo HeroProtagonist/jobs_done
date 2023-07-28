@@ -13,7 +13,7 @@ pub enum Sound {
 
 /// Run a command and play an audio file when it's done
 #[derive(Debug, Parser)]
-#[command(version)]
+#[command(version, arg_required_else_help(true))]
 struct Cli {
     /// Sound to play
     #[arg(short, long)]
@@ -26,11 +26,6 @@ struct Cli {
 
 fn main() {
     let args = Cli::parse();
-
-    if args.command.len() == 0 {
-        println!("No command provided");
-        exit(0)
-    }
 
     let mut command = Command::new(&args.command[0]);
 
