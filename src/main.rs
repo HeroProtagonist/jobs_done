@@ -9,6 +9,7 @@ use sound::play_sound;
 pub enum Sound {
     JobsDone,
     WorkComplete,
+    ZugZug,
 }
 
 /// Run a command and play an audio file when it's done
